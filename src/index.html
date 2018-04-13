@@ -15,10 +15,19 @@
   <link rel="apple-touch-icon" href="/assets/icon/icon.png">
   <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
   <link rel="manifest" href="/manifest.json">
+  
+  <script id="IntercomSettingsScriptTag">
+  window.intercomSettings = {"email":"thedeadofblackfire@yahoo.com","created_at":1521214620,"user_id":"41f059cc-5b1c-4b1a-ae63-954faafb895b","Company Name":"Wc","App Names":"test","Total Users":0,"SDK Names":"","iOS Bundles":"","Android Packages":"","Using HTTP Web Push":false,"Using HTTPS Web Push":false,"user_hash":"195a75c94384454def8e3d518fc665a0fc2393844a689b0cae7b311536dea0bf","app_id":"344a89aeac3f033e4dec4370781543b948aece6d","widget":{"activator":".open-intercom"}};
+  /*(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/344a89aeac3f033e4dec4370781543b948aece6d';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}};})()*/
+  </script>
+  
 </head>
 <body>
 
+  
   <my-app></my-app>
+  
+  
 
   <style>
     body {
@@ -26,6 +35,41 @@
       padding: 0px;
       font-family: sans-serif;
     }
+	
+	.page-content {
+		display:none;
+		/*
+	  visibility: hidden;
+  opacity: 0;
+  */
+	}
+	.page-content.is-shown {
+		/*
+		  visibility: visible;
+  opacity: 1;
+  */
+		display:block;
+	}
+	
+	
+	/*
+.content {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+}
+.content.is-shown {
+  visibility: visible;;
+  opacity: 1;
+  
+}
+*/
   </style>
+  
+  <script id="settings">
+  window.dynamooveSettings = {"email":"thedeadofblackfire@yahoo.com","created_at":1521214620,"user_id":"41f059cc-5b1c-4b1a-ae63-954faafb895b"};
+  </script>
 </body>
 </html>

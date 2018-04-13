@@ -84,6 +84,36 @@ declare global {
 
 
 declare global {
+  interface HTMLDocumentComponentElement extends HTMLStencilElement {
+    'pageid': string;
+    'pages': string[];
+    'showPage': () => void;
+  }
+  var HTMLDocumentComponentElement: {
+    prototype: HTMLDocumentComponentElement;
+    new (): HTMLDocumentComponentElement;
+  };
+  interface HTMLElementTagNameMap {
+    'document-component': HTMLDocumentComponentElement;
+  }
+  interface ElementTagNameMap {
+    'document-component': HTMLDocumentComponentElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'document-component': JSXElements.DocumentComponentAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface DocumentComponentAttributes extends HTMLAttributes {
+      'pageid'?: string;
+      'pages'?: string[];
+    }
+  }
+}
+
+
+declare global {
   interface HTMLMyAppElement extends HTMLStencilElement {
 
   }
@@ -105,6 +135,98 @@ declare global {
   namespace JSXElements {
     export interface MyAppAttributes extends HTMLAttributes {
 
+    }
+  }
+}
+
+
+declare global {
+  interface HTMLPageInboxElement extends HTMLStencilElement {
+    'd': String;
+    'match': MatchResults;
+  }
+  var HTMLPageInboxElement: {
+    prototype: HTMLPageInboxElement;
+    new (): HTMLPageInboxElement;
+  };
+  interface HTMLElementTagNameMap {
+    'page-inbox': HTMLPageInboxElement;
+  }
+  interface ElementTagNameMap {
+    'page-inbox': HTMLPageInboxElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'page-inbox': JSXElements.PageInboxAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface PageInboxAttributes extends HTMLAttributes {
+      'd'?: String;
+      'match'?: MatchResults;
+    }
+  }
+}
+
+
+declare global {
+  interface HTMLPageWrapperElement extends HTMLStencilElement {
+    'addDynamicTag': (myTag: any, myData?: {}, memory?: boolean) => void;
+    'changePage': (value: any) => void;
+    'doc': string;
+    'pageid': string;
+    'pages': string[];
+    'showPage': (pageId: any) => void;
+  }
+  var HTMLPageWrapperElement: {
+    prototype: HTMLPageWrapperElement;
+    new (): HTMLPageWrapperElement;
+  };
+  interface HTMLElementTagNameMap {
+    'page-wrapper': HTMLPageWrapperElement;
+  }
+  interface ElementTagNameMap {
+    'page-wrapper': HTMLPageWrapperElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'page-wrapper': JSXElements.PageWrapperAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface PageWrapperAttributes extends HTMLAttributes {
+      'doc'?: string;
+      'pageid'?: string;
+      'pages'?: string[];
+    }
+  }
+}
+
+
+declare global {
+  interface HTMLTaskDetailElement extends HTMLStencilElement {
+    'd': String;
+    'match': MatchResults;
+  }
+  var HTMLTaskDetailElement: {
+    prototype: HTMLTaskDetailElement;
+    new (): HTMLTaskDetailElement;
+  };
+  interface HTMLElementTagNameMap {
+    'task-detail': HTMLTaskDetailElement;
+  }
+  interface ElementTagNameMap {
+    'task-detail': HTMLTaskDetailElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'task-detail': JSXElements.TaskDetailAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface TaskDetailAttributes extends HTMLAttributes {
+      'd'?: String;
+      'match'?: MatchResults;
     }
   }
 }

@@ -3,15 +3,16 @@ import { MatchResults } from '@stencil/router';
 
 
 @Component({
-  tag: 'app-profile',
-  styleUrl: 'app-profile.css'
+  tag: 'page-inbox',
+  styleUrl: 'page-inbox.css'
 })
-export class AppProfile {
+export class PageInbox {
   
   @Prop() match: MatchResults;
-
+  @Prop() d: String = new Date().toUTCString();
+  
   constructor() {
-    document.title = `Resources`;
+    document.title = `Inbox`;
   }
   
    /**
@@ -22,7 +23,11 @@ export class AppProfile {
    * Will only be called once
    */
   componentWillLoad() {
-    console.log('The component is about to be rendered');
+    console.log('The Inbox is about to be rendered', );
+	//console.log(window.intercomSettings);
+	console.log(window['intercomSettings']);
+	//console.log(window.dynamooveSettings);
+	
   }
 
   /**
@@ -33,26 +38,27 @@ export class AppProfile {
    * Will only be called once
    */
   componentDidLoad() {
-    console.log('The component has been rendered');
+    console.log('The Inbox has been rendered');
   }
 
   /**
    * The component did unload and the element will be destroyed.
    */
   componentDidUnload() {
-    console.log('The view has been removed from the DOM');
+    console.log('The Inbox has been removed from the DOM');
   }
   
-  render() {
-    if (this.match && this.match.params.name) {
+  render() {    
       return (
-        <div class='app-profile'>		
+        <div class='page-inbox'>		
           <p>
-            Hello! My name is 2 {this.match.params.name}.
-            My name was passed in through a route param!
+            my inbox {this.d}
           </p>
+		    <stencil-route-link url='/page/task-detail'>
+                 task
+                </stencil-route-link>
         </div>
       );
-    }
+    
   }
 }
