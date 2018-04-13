@@ -54,7 +54,7 @@ export class PageInbox {
           <p>
             my inbox {this.d}
           </p>
-		    <stencil-route-link url='/page/task-detail'>
+		    <stencil-route-link url={window['dynamooveSettings'].baseUrl+'/page/task-detail'}>
                  task
                 </stencil-route-link>
         </div>

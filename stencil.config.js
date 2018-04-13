@@ -1,9 +1,13 @@
 exports.config = {
   //namespace: 'app',
   outputTargets: [
-    { type: 'dist' },
-    { type: 'www' }
-  ]
+    //{ type: 'dist' },
+    { 
+	  type: 'www', 
+	  //baseUrl: '/app' 
+	}
+  ],
+  globalScript: 'src/global/index.ts'
 };
 /*
 exports.config = {

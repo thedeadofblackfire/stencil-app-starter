@@ -1,4 +1,4 @@
-import { Component } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
 import { Helmet } from '@stencil/helmet';
 
 @Component({
@@ -6,7 +6,9 @@ import { Helmet } from '@stencil/helmet';
   styleUrl: 'app-home.css'
 })
 export class AppHome {
-
+	
+ @Prop({ context: 'baseUrl' }) baseUrl: String;
+ 
  constructor() {
     document.title = `Ab`;
   }
@@ -40,7 +42,8 @@ export class AppHome {
           <title>coucou2</title>
         </Helmet>
 
-		
+		baseUrl: {this.baseUrl}
+		<br/>
 		<button onClick={() => this.testPage()}> Page</button>
 		<button onClick={() => this.testPage2()}> Page2</button>
 		<button onClick={() => this.testPageCustom('app-profile')}> Page3</button>
@@ -72,12 +75,17 @@ export class AppHome {
 			<h3>Pages</h3>
 			 <ul>
               <li>
-                <stencil-route-link url='/page/task-detail'>
+                <stencil-route-link url='/app/page/task-detail'>
                  task
                 </stencil-route-link>
               </li>
+			    <li>
+                <stencil-route-link url={window['dynamooveSettings'].baseUrl+'/page/task-detail'}>
+                 task2
+                </stencil-route-link>
+              </li>
               <li>
-                <stencil-route-link url='/page/page-inbox' >
+                <stencil-route-link url={this.baseUrl+'/page/page-inbox'} >
                  inbox
                 </stencil-route-link>
               </li>

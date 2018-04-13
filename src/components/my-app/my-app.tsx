@@ -31,6 +31,9 @@ export class MyApp {
 
 			<stencil-route url='/' component='app-home' exact={true}>
             </stencil-route>
+			
+			<stencil-route url='/app' component='app-home' exact={true}>
+            </stencil-route>
 
             <stencil-route url='/profile/:name' component='app-profile'>
             </stencil-route>
@@ -52,7 +55,7 @@ export class MyApp {
             />
 			
 			 <stencil-route
-              url="/page/:pageName"
+              url="/app/page/:pageName"
               routeRender={(props: { [key: string]: any }) => {
 				  console.log(props);
 				  /*
